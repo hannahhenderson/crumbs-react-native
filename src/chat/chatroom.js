@@ -40,8 +40,11 @@ export default class Chatroom extends Component {
   }
 
   onSendPress() {
-    this.emitAddMessageToChatRoom()
-    this.setState({ message: ''})
+    if (this.state.message) {
+      this.emitAddMessageToChatRoom();
+      this.setState({ message: ''});
+      this._msgInput.setNativeProps({text: ''});   
+    }
   }
 
   // TODO: Get actual username and location
@@ -101,7 +104,6 @@ export default class Chatroom extends Component {
             ref={(c) => this._scrollView = c}
             onScroll={this.handleScroll}
             scrollEventThrottle={16}
-            
           >
           {list}
           </ScrollView>
@@ -111,6 +113,7 @@ export default class Chatroom extends Component {
             <TextInput
               style={styles.input}
               value={this.message}
+              ref={component=> this._msgInput = component}
               onChangeText={(text) => this.setState({message: text})}
               />
           </View>
