@@ -12,24 +12,23 @@ import {
 } from 'react-native';
 
 const windowSize = Dimensions.get('window');
-const PULLDOWN_DISTANCE = 40;
 
 export default class Chatroom extends Component {
   constructor(props) {
 
     super(props); // provides access to props.socket
 
+    // TODO: Incorporate actual, dynamic data
     this.state = {
       message: null,
       messageList: [],
       location: '37.784-122.409',
-      demoMode: true,
       userLoggedIn: false,
-      username: 'Hannah Test Person'
+      username: 'Hannah Test Person',
+      imgUrl: 'http://fany.savina.net/wp-content/uploads/2010/04/silhouette.jpg'
     }
 
-    this.emitAddMessageToChatRoom();
-    this.getMessagesOnMount();
+    this.props.socket.emit('updateMessagesState', this.state.location);
 
   }
 
@@ -49,6 +48,7 @@ export default class Chatroom extends Component {
 
   // TODO: Get actual username and location
   emitAddMessageToChatRoom() {
+    console.log(this.state.message);
     this.props.socket.emit('addMessageToChatRoom', { 
         location: this.state.location,
         message: this.state.message,
@@ -63,25 +63,29 @@ export default class Chatroom extends Component {
     })
   }
 
-  // TODO: Add functionality to back-button
   onBackPress() {
     this.props.navigator.push({
       name: 'map'
     })
   }
+// // <Image source={{uri: item.picUrl}} defaultSource={uri: 'https://pixabay.com/static/uploads/photo/2013/07/12/15/07/hat-149479_960_720.png'}/>
+// <Image source={uri: 'https://pixabay.com/static/uploads/photo/2013/07/12/15/07/hat-149479_960_720.png'}/>
 
+ 
   // TODO: Turn list into separate component
   render() {
     var list = this.state.messageList.map((item, index) => {
       return (
-        <View
-          style={styles.messageContainer}
-          key={index}
-          >
-          <Text style={this.nameLabel}>
-            {item.username}
-            <Text style={styles.messageLabel}> : {item.message}</Text>
-          </Text>
+        <View key={index}>
+          <View style={styles.listIcon}>
+            <Image style={styles.channelIcon} source={{uri: item.imgUrl}} />
+          </View>
+          <View style={styles.messageContainer}>
+            <Text style={this.nameLabel}>
+              {item.username}
+              <Text style={styles.messageLabel}> : {item.message}</Text>
+            </Text>
+          </View>
         </View>
       )
     })
@@ -183,5 +187,14 @@ var styles = StyleSheet.create({
     alignSelf: 'center',
     backgroundColor: '#ffffff'
   },
+  channelIcon: {
+    width: 30,
+    height: 30
+  },
+  listIcon: {
+    justifyContent: 'flex-start',
+    paddingLeft: 10,
+    paddingRight: 15
+  }
 
 });
