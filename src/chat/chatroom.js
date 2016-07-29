@@ -35,6 +35,7 @@ export default class Chatroom extends Component {
   componentWillMount() {
     this.getMessagesOnMount = this.getMessagesOnMount.bind(this);
     this.onBackPress = this.onBackPress.bind(this);
+    this.onLogoutPress = this.onLogoutPress.bind(this);
     this.getMessagesOnMount();
   }
 
@@ -68,6 +69,12 @@ export default class Chatroom extends Component {
       name: 'map'
     })
   }
+
+  onLogoutPress() {
+    this.props.navigator.push({
+      name: 'login'
+    })
+  }
  
   // TODO: Turn list into separate component
   render() {
@@ -93,13 +100,22 @@ export default class Chatroom extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.topContainer}>
-          <TouchableHighlight
-            underlayColor={'#dcf4ff'}
-            onPress={this.onBackPress}
-            style={{marginLeft: 15}}
-          >
-          <Text style={{color: 'black'}}>&lt; Back</Text>
-          </TouchableHighlight>
+          <View style={styles.topContainerLeft}>
+            <TouchableHighlight style={styles.touchable}
+              underlayColor={'#dcf4ff'}
+              onPress={this.onBackPress}
+            >
+            <Text style={{color: 'black'}}>&lt; Back</Text>
+            </TouchableHighlight>
+          </View>
+          <View style={styles.topContainerRight}>
+            <TouchableHighlight style={styles.touchable}
+              underlayColor={'#dcf4ff'}
+              onPress={this.onLogoutPress}
+            >
+            <Text>Logout &gt;</Text>
+            </TouchableHighlight>
+          </View>
         </View>
         <View style={styles.chatContainer}>
           <ScrollView
@@ -143,10 +159,20 @@ var styles = StyleSheet.create({
   },
   topContainer: {
     flexDirection: 'row',
-    justifyContent: 'flex-start',
+    justifyContent: 'space-between',
     alignItems: 'center',
     backgroundColor: '#c2edff',
-    paddingTop: 20,
+    paddingTop: 20
+  },
+  topContainerLeft: {
+    justifyContent: 'flex-start',
+    width: windowSize.width / 2
+  },
+  topContainerRight: {
+    justifyContent: 'flex-end',
+    width: windowSize.width / 2,
+    alignItems: 'flex-end',
+    paddingRight: 10
   },
   chatContainer: {
     flex: 11,
@@ -185,10 +211,6 @@ var styles = StyleSheet.create({
     alignSelf: 'center',
     backgroundColor: '#ffffff'
   },
-  channelIcon: {
-    width: 30,
-    height: 30
-  },
   listItem: {
     flex: 1,
     flexDirection: 'row',
@@ -217,6 +239,9 @@ var styles = StyleSheet.create({
     fontSize: 13,
     fontWeight: '400',
     color: '#abb8c4'
+  },
+  touchable: {
+    marginLeft: 15
   }
 
 });
