@@ -68,23 +68,21 @@ export default class Chatroom extends Component {
       name: 'map'
     })
   }
-// // <Image source={{uri: item.picUrl}} defaultSource={uri: 'https://pixabay.com/static/uploads/photo/2013/07/12/15/07/hat-149479_960_720.png'}/>
-// <Image source={uri: 'https://pixabay.com/static/uploads/photo/2013/07/12/15/07/hat-149479_960_720.png'}/>
-
  
   // TODO: Turn list into separate component
   render() {
     var list = this.state.messageList.map((item, index) => {
       return (
-        <View key={index}>
+        <View style={styles.listItem}
+        key={index}
+        >
           <View style={styles.listIcon}>
-            <Image style={styles.channelIcon} source={{uri: item.imgUrl}} />
+            <Image style={styles.channelIcon} defaultSource={require('./profileIcon.png')} source={{uri: item.imgUrl}} />
           </View>
-          <View style={styles.messageContainer}>
-            <Text style={this.nameLabel}>
-              {item.username}
-              <Text style={styles.messageLabel}> : {item.message}</Text>
-            </Text>
+          <View style={styles.listInfo}>
+            <Text style={styles.titleLabel}>{item.message}</Text>
+            <Text style={styles.memberLabel}>{item.username}</Text>
+  
           </View>
         </View>
       )
@@ -191,10 +189,34 @@ var styles = StyleSheet.create({
     width: 30,
     height: 30
   },
+  listItem: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#f7f8fc',
+    borderBottomWidth: 0.5,
+    borderColor: '#D0DBE4',
+    padding: 5
+  },
   listIcon: {
     justifyContent: 'flex-start',
     paddingLeft: 10,
     paddingRight: 15
+  },
+  listInfo: {
+    flex: 1,
+    justifyContent: 'flex-start'
+  },
+  titleLabel: {
+    fontSize: 15,
+    fontWeight: '600',
+    color: '#60768b'
+  },
+  memberLabel: {
+    fontSize: 13,
+    fontWeight: '400',
+    color: '#abb8c4'
   }
 
 });
