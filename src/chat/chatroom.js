@@ -78,7 +78,7 @@ export default class Chatroom extends Component {
 
   onBackPress() {
     this.myUnmount();
-    this.props.navigator.jumpTo({
+    this.props.navigator.push({
       name: 'map',
     });
   }
