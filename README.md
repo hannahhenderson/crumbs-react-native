@@ -6,6 +6,7 @@ Stumble upon geo-cached chatrooms and join the conversation with this location-b
 
 ### [Mobile App](https://github.com/devhart/crumbs-react-native)
 
+<img src="https://archive.org/download/crumbs-login/crumbs-login.png" width="350">  <img src="https://archive.org/download/crumbs-apple/crumbs-apple.png" width="350">  <img src="https://archive.org/download/crumbs-conversation/crumbs-conversation.png" width="350">
 
 Table of Contents
 --------------------------
@@ -36,13 +37,14 @@ Getting Started
 ### Starting the Server:
 1. Navigate to `crumbs` folder in the terminal
 2. Run `npm install`
-3. Run `npm server`
+3. Run `npm run dev`
  - Launches watched instance of server with Nodemon
 3. Navigate to `http://localhost:3000/` in browser
 
 ### Starting the Mobile App:
-1. Navigate to `crumbs-react-native` folder in the terminal
-2. Enter `react-native run-ios` to [launch the simulator](https://facebook.github.io/react-native/docs/running-on-simulator-ios.html)
+1. Start server
+2. Navigate to `crumbs-react-native` folder in the terminal
+3. Enter `react-native run-ios` to [launch the simulator](https://facebook.github.io/react-native/docs/running-on-simulator-ios.html)
 
 
 Built With
