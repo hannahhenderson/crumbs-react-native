@@ -2,11 +2,14 @@
 =========================================
 Stumble upon geo-cached chatrooms and join the conversation with this location-based chat application.
 
-### [Server and Web Client](https://github.com/devhart/crumbs)
-
-### [Mobile App](https://github.com/devhart/crumbs-react-native)
-
 <img src="https://archive.org/download/crumbs-login/crumbs-login.png" width="250"><img src="https://archive.org/download/crumbs-apple/crumbs-apple.png" width="250"><img src="https://archive.org/download/crumbs-conversation/crumbs-conversation.png" width="250">
+
+
+Repositories
+--------------------------
+#### [Server and Web Client](https://github.com/devhart/crumbs)
+#### [Mobile App](https://github.com/devhart/crumbs-react-native)
+
 
 Table of Contents
 --------------------------
