@@ -37,7 +37,10 @@ export default class Crumbs extends Component {
       style={styles.container}
       initialRoute={{ name: 'auth' }}
       renderScene={this.renderScene}
-      configureScene={() => Navigator.SceneConfigs.FloatFromRight}
+      configureScene={() => ({
+        ...Navigator.SceneConfigs.FloatFromRight,
+        gestures: null,
+      })}
     />);
   }
 }
