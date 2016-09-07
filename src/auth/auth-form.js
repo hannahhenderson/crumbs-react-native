@@ -19,6 +19,9 @@ export default props => (
       placeholder={'Enter Username'}
       maxLength={12}
       multiline={false}
+      autoCapitalize={'none'}
+      autoCorrect={false}
+      autoFocus
     />
     <TextInput
       style={s.input}
