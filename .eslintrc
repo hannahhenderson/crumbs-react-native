@@ -14,7 +14,7 @@
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/prop-types": 0,
     "global-require": 0,
-    "no-underscore-dangle": [2, { "allow": ["_id"] }],
+    "no-underscore-dangle": [2, { "allow": ["_id", "_navigator"] }],
   },
   "globals": {
     "fetch": true,

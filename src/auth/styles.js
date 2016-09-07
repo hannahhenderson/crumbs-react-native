@@ -1,11 +1,16 @@
 import { StyleSheet } from 'react-native';
 
-module.exports = StyleSheet.create({
+export default StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#87CEEB',
+  },
+  navContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    backgroundColor: '#F5FCFF',
   },
   loginContainer: {
     flex: 1,

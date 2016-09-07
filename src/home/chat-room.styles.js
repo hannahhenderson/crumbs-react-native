@@ -5,7 +5,7 @@ import {
 
 const windowSize = Dimensions.get('window');
 
-module.exports = StyleSheet.create({
+export default StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
@@ -14,20 +14,30 @@ module.exports = StyleSheet.create({
   },
   topContainer: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
     backgroundColor: '#c2edff',
     paddingTop: 20,
   },
   topContainerLeft: {
-    justifyContent: 'flex-start',
-    width: windowSize.width / 2,
+    flex: 1,
+    alignItems: 'flex-start',
+    justifyContent: 'flex-end',
+    paddingBottom: 10,
+    paddingTop: 10,
+  },
+  topContainerCenter: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    paddingBottom: 10,
+    paddingTop: 10,
   },
   topContainerRight: {
-    justifyContent: 'flex-end',
-    width: windowSize.width / 2,
+    flex: 1,
     alignItems: 'flex-end',
-    paddingRight: 10,
+    justifyContent: 'flex-end',
+    paddingRight: 15,
+    paddingBottom: 10,
+    paddingTop: 10,
   },
   chatContainer: {
     flex: 11,
@@ -99,7 +109,7 @@ module.exports = StyleSheet.create({
     fontWeight: '400',
     color: '#abb8c4',
   },
-  touchable: {
+  navButton: {
     marginLeft: 15,
   },
 });
