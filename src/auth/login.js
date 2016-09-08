@@ -87,12 +87,8 @@ export default class Login extends Component {
             <Text style={s.label}>LOGIN</Text>
           </TouchableHighlight>
           <Hyperlink>
-            <Text style={{ fontSize: 15 }}>
-              Not a member?
-              <Text onPress={this.toSignUp} style={{ color: 'blue', fontSize: 15 }}>
-                Create a Profile
-              </Text>
-            </Text>
+            <Text style={s.statusQuestion}>Not a member?</Text>
+            <Text style={s.statusQuestionLink} onPress={this.toSignUp}>Create a Profile</Text>
           </Hyperlink>
         </AuthForm>
       </View>

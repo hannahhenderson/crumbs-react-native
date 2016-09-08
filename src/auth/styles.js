@@ -57,4 +57,12 @@ export default StyleSheet.create({
     fontWeight: '600',
     color: '#ffffff',
   },
+  statusQuestion: {
+    fontSize: 15,
+  },
+  statusQuestionLink: {
+    fontSize: 15,
+    textAlign: 'center',
+    color: 'blue',
+  },
 });

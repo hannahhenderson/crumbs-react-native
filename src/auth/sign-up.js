@@ -86,12 +86,8 @@ export default class Signup extends Component {
             <Text style={s.label}>SIGN UP</Text>
           </TouchableHighlight>
           <Hyperlink>
-            <Text style={{ fontSize: 15 }}>
-              Already a member?
-              <Text onPress={this.toLogin} style={{ color: 'blue', fontSize: 15 }}>
-                Login
-              </Text>
-            </Text>
+            <Text style={s.statusQuestion}>Already a member?</Text>
+            <Text style={s.statusQuestionLink} onPress={this.toLogin}>Login</Text>
           </Hyperlink>
         </AuthForm>
       </View>
