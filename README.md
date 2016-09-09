@@ -1,15 +1,17 @@
-<img src="https://ia601509.us.archive.org/0/items/cookie_201608/cookie_thumb.jpg" height="60"> Crumbs
-=========================================
+![Crumbs](https://cloud.githubusercontent.com/assets/394393/18373478/5dde5350-75f9-11e6-9647-2ee58e3422e5.png)
+--------------------------
 Stumble upon geo-cached chatrooms and join the conversation with this location-based chat application.
 
-<img src="https://archive.org/download/crumbs-login/crumbs-login.png" width="250"><img src="https://archive.org/download/crumbs-apple/crumbs-apple.png" width="250"><img src="https://archive.org/download/crumbs-conversation/crumbs-conversation.png" width="250">
-
+<img height="0" width="12.5%">
+<img src="https://cloud.githubusercontent.com/assets/394393/18373479/5f421c4a-75f9-11e6-8507-4d571c9c9a49.png" width="25%"></img>
+<img src="https://cloud.githubusercontent.com/assets/394393/18373807/2eebb7b0-75fc-11e6-94b6-cc29c285d50f.png" width="25%"></img>
+<img src="https://cloud.githubusercontent.com/assets/394393/18373481/6190903a-75f9-11e6-928e-9acc33144c07.gif" width="25%"></img> 
+<img height="0" width="12.5%">
 
 Repositories
 --------------------------
 #### [Server and Web Client](https://github.com/devhart/crumbs)
 #### [Mobile App](https://github.com/devhart/crumbs-react-native)
-
 
 Table of Contents
 --------------------------
@@ -56,6 +58,7 @@ Built With
 * **Mobile App:** React-Native, Maps
 * **Server:** Node.js, Express, Mongoose
 * **Storage:** MongoDb
+* **Real-Time Communications:** Socket.IO
 
 
 Contributions
@@ -66,7 +69,7 @@ If you have any problems or major improvements, please consult the known issues.
 
 Authors
 --------------------------
-* [Dennis Ting]() ([dting](https://github.com/dting))
+* [Dennis Ting](https://www.linkedin.com/in/dennis-ting) ([dting](https://github.com/dting))
 * [Hannah Henderson](https://www.linkedin.com/in/hahenderson) ([hannahhenderson](https://github.com/hannahhenderson))
 * [James Ramadan](https://www.linkedin.com/in/james-ramadan) ([jamesramadan](https://github.com/jamesramadan))
 * [Wayne Adams](https://www.linkedin.com/in/wayneladams) ([wayneadams](https://github.com/wayneadams))
