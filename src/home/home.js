@@ -37,7 +37,7 @@ export default class Home extends Component {
 
     store.get('token').then(token => {
       if (!token) {
-        return this.props.navigator.resetTo({ name: 'auth' });
+        return this.props.navigator.replace({ name: 'auth' });
       }
 
       const socket = io('http://localhost:3000', {
@@ -48,7 +48,7 @@ export default class Home extends Component {
 
       socket.on('unauthorized', err => {
         if (err.data.type === 'UnauthorizedError' || err.data.code === 'invalid_token') {
-          store.delete('token').then(() => this.props.navigator.resetTo({ name: 'auth' }));
+          store.delete('token').then(() => this.props.navigator.replace({ name: 'auth' }));
         }
       });
 
@@ -68,12 +68,13 @@ export default class Home extends Component {
 
       socket.on('room:joined', ({ room }) => {
         this.setState({ room });
+        this._navigator.push({ name: 'chat-room' });
       });
 
       socket.on('message:added', ({ location, message }) => {
-        const { room } = this.state;
-        if (room && location === this.state.location) {
-          room.messages.push(message);
+        if (this.state.room && location === this.state.location) {
+          const messages = this.state.room.messages.concat(message);
+          const room = Object.assign({}, this.state.room, { messages });
           this.setState({ room });
         }
       });
@@ -108,8 +109,12 @@ export default class Home extends Component {
   }
 
   joinRoom() {
-    this._navigator.push({ name: 'chat-room' });
-    this.socket.emit('join:room', { location: this.state.location });
+    const { room, location } = this.state;
+    if (room && room.location === location) {
+      this._navigator.push({ name: 'chat-room' });
+    } else {
+      this.socket.emit('join:room', { location });
+    }
   }
 
   updateMessage(message) {
