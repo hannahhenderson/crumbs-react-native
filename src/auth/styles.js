@@ -21,6 +21,10 @@ export default StyleSheet.create({
     alignItems: 'center',
     fontSize: 60,
     color: 'orange',
+    fontFamily: 'AvenirNext-Heavy',
+    textShadowColor: '#785A41',
+    textShadowOffset: {width: 2, height: 2},
+    textShadowRadius: 1,
   },
   subheader: {
     alignItems: 'center',
